@@ -18,7 +18,6 @@ public class Celula {
     }
     
     public Celula(Object elem){
-        this.prox = prox;
         this.elem = elem;
     }
 
