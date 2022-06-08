@@ -12,7 +12,12 @@ public class Celula {
     private Celula prox;
     private Object elem;
     
-    public Celula(Celula prox, Object elem){
+    public Celula(Object elem, Celula prox){
+        this.prox = prox;
+        this.elem = elem;
+    }
+    
+    public Celula(Object elem){
         this.prox = prox;
         this.elem = elem;
     }
