@@ -4,32 +4,56 @@
  */
 package com.mycompany.Class07_06;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Aluno
  */
 public class Main {
     public static void main(String [] args){
+        Scanner scan = new Scanner(System.in);
         Lista list = new Lista();
-        list.insertAt(10, 1);
-        list.push(2);
-        list.insert(1);
-        list.insert(2);
-        list.insert(3);
-        list.insert(4);
-        list.push(2);
-        list.push(3);
-        list.push(4);
-        //4 3 2 1 10 2 2 3 4
-        list.insertAt(10, 5);
-        list.insertAt(12, 4);
-        list.insertAt(13, 3);
-        System.out.println(list);
-        list.removeFirst();
-        list.removeLast();
-        list.removeAt(5);
-        list.removeAt(1);
-        list.removeAt(8);
-        System.out.println(list);
+        int opt, pos, elem;
+        while(true){
+            System.out.println("\n---------------------------------------------------");
+            System.out.println("01 - Imprimir Lista;");
+            System.out.println("02 - Inserir no inicio;");
+            System.out.println("03 - Inserir no meio;");
+            System.out.println("04 - Inserir no fim;");
+            System.out.println("05 - Remover do inicio;");
+            System.out.println("06 - Remover do meio;");
+            System.out.println("07 - Remover do fim;");
+            System.out.println("08 - Buscar elemento;");
+            System.out.println("09 - Tamanho da lista;");
+            System.out.println("0 - Finalizar;");
+            opt = scan.nextInt();
+            switch(opt){
+                case 1:
+                    System.out.println(list);
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+            if(opt == 0) break;
+        }
     }
 }
