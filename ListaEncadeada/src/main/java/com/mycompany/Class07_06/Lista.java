@@ -8,33 +8,20 @@ package com.mycompany.Class07_06;
  *
  * @author Aluno
  */
-public class Celula {
-    private Celula prox;
-    private Object elem;
+public class Lista {
+    private Celula ini;
+    private Celula fim;
+    private int tam;
     
-    public Celula(Object elem, Celula prox){
-        this.prox = prox;
-        this.elem = elem;
+    public Lista(){
+        this.ini = this.fim = null;
+        this.tam = 0;
     }
     
-    public Celula(Object elem){
-        this.prox = prox;
-        this.elem = elem;
-    }
-
-    public Celula getProx() {
-        return prox;
-    }
-
-    public void setProx(Celula prox) {
-        this.prox = prox;
-    }
-
-    public Object getElem() {
-        return elem;
-    }
-
-    public void setElem(Object elem) {
-        this.elem = elem;
+    public void insert(Object elem){
+       this.ini = new Celula(elem, this.ini);
+       this.tam++;
+       if(this.tam == 1)
+           this.fim = this.ini;
     }
 }
