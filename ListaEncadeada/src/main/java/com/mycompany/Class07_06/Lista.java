@@ -65,6 +65,7 @@ public class Lista {
         if(print) System.out.println(cur.getElem());
         for(int i = 1; i < pos; i++){
             cur = cur.getProx();
+            if(cur == null) break;
             if(print) System.out.println(cur.getElem());
         }
         return cur;
@@ -89,5 +90,38 @@ public class Lista {
     
     private boolean occupied(int pos){
         return pos > 0 && pos <= this.tam;
+    }
+
+    public void removeFirst(){
+        if(this.tam == 1)
+            this.fim = null;
+        else if(this.tam > 1){
+            this.ini = this.ini.getProx();
+            this.tam--;
+        }
+    }
+    
+    public void removeLast(){
+        if(this.tam <= 1){
+            this.removeFirst();
+        } else {
+            Celula ant = this.getCelAt(this.tam-1);
+            ant.setProx(null);
+            this.tam--;
+        }
+    }
+
+    public void removeAt(int pos){
+        if(pos == 1){
+            this.removeFirst();
+        } else if(pos == this.tam){
+            this.removeLast();
+        } else {
+            Celula ant = this.getCelAt(pos-1);
+            if(ant != null){
+                ant.setProx(ant.getProx().getProx());
+                this.tam--;
+            }
+        }
     }
 }
