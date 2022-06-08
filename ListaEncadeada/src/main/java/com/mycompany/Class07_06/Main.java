@@ -25,5 +25,11 @@ public class Main {
         list.insertAt(12, 4);
         list.insertAt(13, 3);
         System.out.println(list);
+        list.removeFirst();
+        list.removeLast();
+        list.removeAt(5);
+        list.removeAt(1);
+        list.removeAt(8);
+        System.out.println(list);
     }
 }
