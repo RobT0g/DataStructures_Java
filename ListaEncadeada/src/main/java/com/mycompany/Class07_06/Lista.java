@@ -4,6 +4,8 @@
  */
 package com.mycompany.Class07_06;
 
+import java.util.Set;
+
 /**
  *
  * @author Aluno
@@ -23,5 +25,69 @@ public class Lista {
        this.tam++;
        if(this.tam == 1)
            this.fim = this.ini;
+    }
+    
+    public void push(Object elem){
+        if(this.tam == 0){
+            this.insert(elem);
+        } else {
+            Celula nova = new Celula(elem);
+            this.fim.setProx(nova);
+            this.fim = nova;
+            this.tam++;
+        }
+    }
+    
+    public void insertAt(Object elem, int pos){
+        if(this.tam == 0 && pos == 1){
+            this.insert(elem);
+        } else if(pos == this.tam+1){
+            this.push(elem);
+        } else{
+        Celula cel = this.getCelAt(pos-1);
+            if(cel != null){
+                Celula nova = new Celula(elem, cel.getProx());
+                cel.setProx(nova);
+                this.tam++;
+            }
+        }
+    }
+    
+    private Celula getCelAt(int pos){
+        return this.iterate(pos, false);
+    }
+
+    private Celula iterate(int pos, boolean print){
+        if(!this.occupied(pos) || this.tam == 0){
+            return null;
+        }
+        Celula cur = this.ini;
+        if(print) System.out.println(cur.getElem());
+        for(int i = 1; i < pos; i++){
+            cur = cur.getProx();
+            if(print) System.out.println(cur.getElem());
+        }
+        return cur;
+    }
+    
+    public void printAll(){
+        this.iterate(this.tam, true);
+    }
+
+    @Override
+    public String toString(){
+        if(this.tam == 0)
+            return "[]";
+        Celula cur = this.ini;
+        String txt = "[" + cur.getElem();
+        for(int i = 1; i < this.tam; i++){
+            cur = cur.getProx();
+            txt += ", " + cur.getElem();
+        }
+        return txt + "]";
+    }
+    
+    private boolean occupied(int pos){
+        return pos > 0 && pos <= this.tam;
     }
 }
