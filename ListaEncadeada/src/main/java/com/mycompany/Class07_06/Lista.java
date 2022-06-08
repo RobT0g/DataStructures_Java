@@ -124,4 +124,13 @@ public class Lista {
             }
         }
     }
+    
+    public boolean includes(Object elem){
+        Celula cur = this.ini;
+        for(int i = 0; i <= this.tam; i++){
+            if(cur.getElem() == elem) return true;
+            cur = cur.getProx();
+        }
+        return false;
+    }
 }
