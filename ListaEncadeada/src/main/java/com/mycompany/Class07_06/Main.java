@@ -33,20 +33,40 @@ public class Main {
                     System.out.println(list);
                     break;
                 case 2:
+                    System.out.print("Insira o valor a ser inserido no início: ");
+                    elem = scan.nextInt();
+                    list.insert(elem);
                     break;
                 case 3:
+                    System.out.print("Insira o valor a ser inserido: ");
+                    elem = scan.nextInt();
+                    System.out.print("Insira a posição na qual o valor será inserido: ");
+                    pos = scan.nextInt();
+                    list.insertAt(elem, pos);
                     break;
                 case 4:
+                    System.out.print("Insira o valor a ser inserido no final: ");
+                    elem = scan.nextInt();
+                    list.push(elem);
                     break;
                 case 5:
+                    list.removeFirst();
                     break;
                 case 6:
+                    System.out.print("Insira a posição da qual o valor será removido: ");
+                    pos = scan.nextInt();
+                    list.removeAt(pos);
                     break;
                 case 7:
+                    list.removeLast();
                     break;
                 case 8:
+                    System.out.print("Insira o valor a ser procurado: ");
+                    elem = scan.nextInt();
+                    System.out.println("O valor " + (list.includes(elem)?"":"não ") +"está presente na lista!");
                     break;
                 case 9:
+                    System.out.println("O tamanho da lista é " + list.getSize() + ".");
                     break;
                 case 0:
                     break;

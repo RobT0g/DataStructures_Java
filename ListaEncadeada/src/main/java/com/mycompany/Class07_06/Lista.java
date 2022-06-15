@@ -133,4 +133,8 @@ public class Lista {
         }
         return false;
     }
+
+    public int getSize(){
+        return this.tam;
+    }
 }
